@@ -27,7 +27,7 @@ fs.readFile('config.txt', 'utf8', function(err, data) {
 }); 
 
 // ======================================================================================
-/*
+
 const websocket_server = new WebSocket.Server({ port: 7777 });
 
 function status(response) {  
@@ -111,6 +111,6 @@ websocket_server.on('connection', (web_socket) => {
 });
 
 // ======================================================================================
-*/
+
 console.log("Сервер на вебсокетах запущен на порту 7777");
 console.log("Имя хоста:", os.hostname());
