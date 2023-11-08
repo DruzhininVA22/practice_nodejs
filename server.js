@@ -27,7 +27,7 @@ fs.readFile('config.txt', 'utf8', function(err, data) {
 }); 
 
 // ======================================================================================
-
+/*
 const websocket_server = new WebSocket.Server({ port: 7777 });
 
 function status(response) {  
@@ -51,7 +51,7 @@ function _arrayBufferToBase64( buffer ) {
   }
   return btoa( binary );
 }
-/*
+
 websocket_server.on('connection', (web_socket) => {
   console.log('Соединение с клиентом установлено');
   
@@ -109,55 +109,6 @@ websocket_server.on('connection', (web_socket) => {
     console.log('Связь с клиентом разорвана!');
   });
 });
-
-// ======================================================================================
-
-function download_content(url, progressBar) {
-  const xml_htpp_reqst = new XMLHttpRequest();
-  xml_htpp_reqst.open('GET', url, true);
-  xml_htpp_reqst.responseType = 'blob';
-
-  xml_htpp_reqst.onloadstart = function() {
-      console.log('Загрузка данных запущена!');
-  };
-
-  xml_htpp_reqst.onprogress = function(event) {
-      if (event.lengthComputable) {
-        const progress = (event.loaded / event.total) * 100;
-        progressBar.value = progress;
-      }
-  };
-
-  xml_htpp_reqst.onload = function() {
-      if (xml_htpp_reqst.status === 200) {
-        const urlSegments = url.split('/');
-        const filename = urlSegments[urlSegments.length - 1];
-
-        const blob = new Blob([xml_htpp_reqst.response]);
-        const link = document.createElement('a');
-        
-        link.href = URL.createObjectURL(blob);
-        link.download = filename ? filename : 'downloaded_file';
-        link.click();
-        
-        progressBar.value = 100;
-
-        let hash_string = hash(link.href);
-
-        localStorage.setItem(hash(target_string), ); 
-        localStorage.setItem('list_of_URLs', JSON.stringify([[hash_string, target_string]]))
-        
-      } else {
-        alert('Ошибка в процессе передачи данных: '+xml_htpp_reqst.status);
-      }
-  };
-
-  xml_htpp_reqst.onerror = function() {
-      console.log('Ошибка в процессе передачи данных!!!');
-  };
-
-  xml_htpp_reqst.send();
-}
 
 // ======================================================================================
 */
