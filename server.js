@@ -51,7 +51,7 @@ function _arrayBufferToBase64( buffer ) {
   }
   return btoa( binary );
 }
-
+/*
 websocket_server.on('connection', (web_socket) => {
   console.log('Соединение с клиентом установлено');
   
@@ -160,6 +160,6 @@ function download_content(url, progressBar) {
 }
 
 // ======================================================================================
-
+*/
 console.log("Сервер на вебсокетах запущен на порту 7777");
 console.log("Имя хоста:", os.hostname());
