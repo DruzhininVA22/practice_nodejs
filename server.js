@@ -1,5 +1,6 @@
 const fs = require('fs');
 const WebSocket = require('ws');
+const os = require("os");
 
 const keywords = {
     'ONE': ['http://top-fon.com/uploads/posts/2023-02/1675377658_top-fon-com-p-kareliya-fon-dlya-prezentatsii-176.jpg', 
@@ -161,3 +162,4 @@ function download_content(url, progressBar) {
 // ======================================================================================
 
 console.log("Сервер на вебсокетах запущен на порту 7777");
+console.log("Имя хоста:", os.hostname());
